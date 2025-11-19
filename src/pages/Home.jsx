@@ -61,9 +61,9 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-16 px-6 md:px-12 lg:px-20">
+      <section className="py-24 px-6 md:px-12 lg:px-20">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-20 text-center">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-12 text-center">
             Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto max-w-5xl">
@@ -100,10 +100,10 @@ export default function Home() {
       </section>
 
       {/* About Me Section */}
-      <section className="py-16 px-6 md:px-12 lg:px-20">
+      <section className="py-24 px-6 md:px-12 lg:px-20">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-blue-950/40 to-gray-900/60 border border-blue-900/50 rounded-2xl p-8 md:p-12 lg:p-16 shadow-2xl">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-16 text-center">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-8 text-center">
               About Me
             </h2>
             <div className="space-y-10 text-gray-300 leading-relaxed text-lg">

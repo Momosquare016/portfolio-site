@@ -4,9 +4,9 @@
 @import "tailwindcss";
 
 /* Global styles for dark blue professional theme */
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -15,6 +15,11 @@ body {
   background-color: #0a0a0a;
   color: #ffffff;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
   margin: 0;
   padding: 0;
 }
