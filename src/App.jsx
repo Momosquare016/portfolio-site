@@ -5,7 +5,7 @@ import Resume from './pages/Resume';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/">
       <div className="min-h-screen bg-black">
         <Navigation />
         <Routes>
