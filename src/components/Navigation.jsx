@@ -15,7 +15,7 @@ export default function Navigation() {
               <img
                 src={logoImage}
                 alt="MO"
-                className="w-full h-full object-cover object-top scale-125"
+                className="w-full h-full object-cover object-center scale-110"
               />
             </div>
             <span className="font-heading text-white text-2xl font-bold group-hover:text-blue-400 transition-colors">
