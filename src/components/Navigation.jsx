@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import logoImage from '../assets/images/Png backgroundless mo.png';
 
 export default function Navigation() {
   const location = useLocation();
@@ -12,7 +13,7 @@ export default function Navigation() {
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-br from-gray-900 to-black border-2 border-blue-500/30 flex items-center justify-center">
               <img
-                src="/src/assets/images/Png backgroundless mo.png"
+                src={logoImage}
                 alt="MO"
                 className="w-full h-full object-cover object-top scale-125"
               />

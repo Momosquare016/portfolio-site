@@ -1,4 +1,7 @@
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import project1Image from '../assets/images/Screenshot 2025-11-18 021857.png';
+import project2Image from '../assets/images/Screenshot 2025-11-18 021938.png';
+import project3Image from '../assets/images/Screenshot 2025-11-18 021957.png';
 
 export default function Home() {
   const projects = [
@@ -6,21 +9,21 @@ export default function Home() {
       id: 1,
       title: 'Project 1',
       description: 'Your first project description',
-      image: '/src/assets/images/Screenshot 2025-11-18 021857.png',
+      image: project1Image,
       link: 'https://example.com'
     },
     {
       id: 2,
       title: 'Project 2',
       description: 'Your second project description',
-      image: '/src/assets/images/Screenshot 2025-11-18 021938.png',
+      image: project2Image,
       link: 'https://example.com'
     },
     {
       id: 3,
       title: 'Project 3',
       description: 'Your third project description',
-      image: '/src/assets/images/Screenshot 2025-11-18 021957.png',
+      image: project3Image,
       link: 'https://example.com'
     }
   ];
