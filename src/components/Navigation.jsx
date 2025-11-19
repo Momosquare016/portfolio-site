@@ -23,7 +23,7 @@ export default function Navigation() {
             </span>
           </Link>
 
-          <div className="flex space-x-12 md:space-x-16">
+          <div className="flex gap-8 md:gap-12">
             <Link
               to="/"
               className={`transition-colors font-medium text-xl ${
