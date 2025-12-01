@@ -66,3 +66,8 @@ Production builds go to `dist/` via Vite. The build process includes asset optim
 **Global Changes:**
 - Update `index.html` for meta tags, title, or global scripts
 - Modify base path or output directory in `vite.config.js` if needed
+ 
+
+## Other important conditions 
+**comments:**
+-add comments for each and every code as if a new coder has started coding so i can understand and learn.

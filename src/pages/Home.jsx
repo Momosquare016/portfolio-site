@@ -53,7 +53,7 @@ export default function Home() {
             {/* Terminal-style Text Below Animation */}
             <div className="text-center w-full px-4">
               <p className="text-base md:text-lg lg:text-xl text-blue-400 font-mono leading-relaxed inline-block border-r-4 border-blue-400 pr-2 animate-typing overflow-hidden whitespace-nowrap max-w-full">
-                Building responsive web experiences at AI-speed—driven by curiosity and a passion for creating
+                Building responsive web experiences at AI-speed by curiosity and a passion for creating
               </p>
             </div>
           </div>
