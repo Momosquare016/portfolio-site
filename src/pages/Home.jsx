@@ -1,38 +1,117 @@
+import { useRef } from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import project1Image from '../assets/images/Screenshot 2025-11-18 021857.png';
-import project2Image from '../assets/images/Screenshot 2025-11-18 021938.png';
-import project3Image from '../assets/images/Screenshot 2025-11-18 021957.png';
+import { motion, useInView } from 'framer-motion';
+import project1Image from '../assets/images/Yornews.png';
+import project2Image from '../assets/images/Kidos AI.png';
+import project3Image from '../assets/images/Dashubs.png';
+import CosmosBackground from '../components/CosmosBackground';
+import Timeline from '../components/Timeline';
+import ContactPopup from '../components/ContactPopup';
+
+function ProjectCard({ project, index }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
+
+  return (
+    <motion.a
+      ref={ref}
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group bg-gray-900 border border-blue-900/50 hover:border-blue-500 transition-all duration-300 overflow-hidden rounded-lg hover:shadow-xl hover:shadow-blue-500/20"
+      initial={{ opacity: 0, y: 50, scale: 0.9 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.15,
+        ease: [0.25, 0.1, 0.25, 1],
+      }}
+      whileHover={{ y: -8, transition: { duration: 0.2 } }}
+    >
+      <div className="aspect-video bg-gray-800 border-b border-blue-900/50 overflow-hidden">
+        <motion.img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover"
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3 }}
+        />
+      </div>
+      <div className="p-6 space-y-3">
+        <h3 className="font-heading text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+          {project.title}
+        </h3>
+        <p className="text-gray-400 text-sm leading-relaxed">
+          {project.description}
+        </p>
+        <div className="pt-2 text-blue-500 text-sm font-medium group-hover:translate-x-2 transition-transform inline-block">
+          View Project →
+        </div>
+      </div>
+    </motion.a>
+  );
+}
+
+function ProjectsSection({ projects }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <section className="py-24 px-6 md:px-12 lg:px-20" ref={ref}>
+      <div className="max-w-6xl mx-auto">
+        <motion.h2
+          className="font-heading text-3xl md:text-4xl font-bold text-white mb-12 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          Projects
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto max-w-5xl">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   const projects = [
     {
       id: 1,
-      title: 'Project 1',
-      description: 'Your first project description',
+      title: 'Yornews',
+      description: 'Fullstack website that provides personalized news with the help of AI.',
       image: project1Image,
-      link: 'https://example.com'
+      link: 'https://yornews.vercel.app/'
     },
     {
       id: 2,
-      title: 'Project 2',
-      description: 'Your second project description',
+      title: 'Kidos AI',
+      description: 'A kid-friendly AI chatbot that helps children learn and explore safely, with strong guardrails blocking profanity, vulgar language, and any adult content.',
       image: project2Image,
       link: 'https://example.com'
     },
     {
       id: 3,
-      title: 'Project 3',
-      description: 'Your third project description',
+      title: 'Dashubs',
+      description: 'Wix website designed for a startup marketplace.',
       image: project3Image,
-      link: 'https://example.com'
+      link: 'https://www.dashubs.com/'
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+      {/* Contact Popup */}
+      <ContactPopup />
+
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 md:px-12 lg:px-20 min-h-[85vh] flex items-center">
-        <div className="max-w-7xl mx-auto w-full">
+      <section className="pt-32 pb-16 px-6 md:px-12 lg:px-20 min-h-[85vh] flex items-center relative overflow-hidden">
+        {/* Cosmos Background */}
+        <CosmosBackground />
+        <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="flex flex-col items-center justify-center">
 
             {/* Title Above Animation */}
@@ -61,43 +140,10 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-20">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-12 text-center">
-            Projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto max-w-5xl">
-            {projects.map((project) => (
-              <a
-                key={project.id}
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-gray-900 border border-blue-900/50 hover:border-blue-500 transition-all duration-300 overflow-hidden rounded-lg hover:shadow-xl hover:shadow-blue-500/20"
-              >
-                <div className="aspect-video bg-gray-800 border-b border-blue-900/50 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6 space-y-3">
-                  <h3 className="font-heading text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="pt-2 text-blue-500 text-sm font-medium group-hover:translate-x-2 transition-transform inline-block">
-                    View Project →
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProjectsSection projects={projects} />
+
+      {/* Timeline / Journey Section */}
+      <Timeline />
 
       {/* About Me Section */}
       <section className="py-24 px-6 md:px-12 lg:px-20">

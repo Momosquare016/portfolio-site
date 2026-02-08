@@ -44,6 +44,16 @@ export default function Navigation() {
             >
               Resume
             </Link>
+            <Link
+              to="/contact"
+              className={`transition-colors font-medium text-xl ${
+                isActive('/contact')
+                  ? 'text-blue-500 border-b-2 border-blue-500'
+                  : 'text-gray-300 hover:text-blue-400'
+              }`}
+            >
+              Contact
+            </Link>
           </div>
         </div>
       </div>
