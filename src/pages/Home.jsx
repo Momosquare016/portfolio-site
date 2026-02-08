@@ -84,7 +84,7 @@ export default function Home() {
       title: 'Yornews',
       description: 'Fullstack website that provides personalized news with the help of AI.',
       image: project1Image,
-      link: 'https://yornews.vercel.app/'
+      link: 'https://yornews.seeleco.co/'
     },
     {
       id: 2,
