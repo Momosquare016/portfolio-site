@@ -38,6 +38,7 @@ export default function Contact() {
       });
 
       const result = await response.json();
+      console.log('Web3Forms response:', result);
 
       if (result.success) {
         setStatus({
