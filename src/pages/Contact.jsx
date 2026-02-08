@@ -28,7 +28,7 @@ export default function Contact() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'YOUR_ACCESS_KEY_HERE', // Replace with your Web3Forms access key
+          access_key: '5a68cc2b-64b4-4e6b-ab2c-be0f1bae9c64',
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
