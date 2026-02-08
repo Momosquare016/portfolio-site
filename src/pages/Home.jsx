@@ -91,7 +91,7 @@ export default function Home() {
       title: 'Kidos AI',
       description: 'A kid-friendly AI chatbot that helps children learn and explore safely, with strong guardrails blocking profanity, vulgar language, and any adult content.',
       image: project2Image,
-      link: 'https://example.com'
+      link: 'https://kidosai.seeleco.co/'
     },
     {
       id: 3,
