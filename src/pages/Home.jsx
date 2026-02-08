@@ -32,7 +32,7 @@ function ProjectCard({ project, index }) {
         <motion.img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-cover"
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.3 }}
         />
