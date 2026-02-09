@@ -9,24 +9,27 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-blue-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-br from-gray-900 to-black border-2 border-blue-500/30 flex items-center justify-center">
+        {/* Reduced height on mobile for compact nav */}
+        <div className="flex justify-between items-center h-16 sm:h-20">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
+            {/* Smaller logo on mobile */}
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full overflow-hidden bg-gradient-to-br from-gray-900 to-black border-2 border-blue-500/30 flex items-center justify-center">
               <img
                 src={logoImage}
                 alt="MO"
                 className="w-full h-full object-cover object-[20%_1%] scale-110"
               />
             </div>
-            <span className="font-heading text-white text-2xl font-bold group-hover:text-blue-400 transition-colors">
+            <span className="font-heading text-white text-xl sm:text-2xl font-bold group-hover:text-blue-400 transition-colors">
               MO
             </span>
           </Link>
 
-          <div className="flex gap-8 md:gap-12">
+          {/* Nav links - smaller text and tighter gap on mobile to prevent overflow */}
+          <div className="flex gap-4 sm:gap-8 md:gap-12">
             <Link
               to="/"
-              className={`transition-colors font-medium text-xl ${
+              className={`transition-colors font-medium text-base sm:text-lg md:text-xl ${
                 isActive('/')
                   ? 'text-blue-500 border-b-2 border-blue-500'
                   : 'text-gray-300 hover:text-blue-400'
@@ -36,7 +39,7 @@ export default function Navigation() {
             </Link>
             <Link
               to="/resume"
-              className={`transition-colors font-medium text-xl ${
+              className={`transition-colors font-medium text-base sm:text-lg md:text-xl ${
                 isActive('/resume')
                   ? 'text-blue-500 border-b-2 border-blue-500'
                   : 'text-gray-300 hover:text-blue-400'
@@ -46,7 +49,7 @@ export default function Navigation() {
             </Link>
             <Link
               to="/contact"
-              className={`transition-colors font-medium text-xl ${
+              className={`transition-colors font-medium text-base sm:text-lg md:text-xl ${
                 isActive('/contact')
                   ? 'text-blue-500 border-b-2 border-blue-500'
                   : 'text-gray-300 hover:text-blue-400'
