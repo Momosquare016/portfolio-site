@@ -87,31 +87,31 @@ export default function Home() {
   const projects = [
     {
       id: 1,
-      title: 'Yornews',
-      description: 'Fullstack website that provides personalized news with the help of AI.',
-      image: project1Image,
-      link: 'https://yornews.com/'
+      title: 'Matteca',
+      description: 'Matteca helps track, review and fix your life. Track sleep, gym, diet, macros, work, finance, anything. Type it, speak it, or let the AI parse it.',
+      image: project4Image,
+      link: 'https://matteca.com/'
     },
     {
       id: 2,
-      title: 'Kidos AI',
-      description: 'A kid-friendly AI chatbot that helps children learn and explore safely, with strong guardrails blocking profanity, vulgar language, and any adult content.',
-      image: project2Image,
-      link: 'https://kidosai.seeleco.co/'
-    },
-    {
-      id: 3,
       title: 'Dashubs',
       description: 'Wix website designed for a startup marketplace.',
       image: project3Image,
       link: 'https://www.dashubs.com/'
     },
     {
+      id: 3,
+      title: 'Yornews',
+      description: 'Fullstack website that provides personalized news with the help of AI.',
+      image: project1Image,
+      link: 'https://yornews.com/'
+    },
+    {
       id: 4,
-      title: 'Matteca',
-      description: 'Matteca helps track, review and fix your life. Track sleep, gym, diet, macros, work, finance, anything. Type it, speak it, or let the AI parse it.',
-      image: project4Image,
-      link: 'https://matteca.com/'
+      title: 'Kidos AI',
+      description: 'A kid-friendly AI chatbot that helps children learn and explore safely, with strong guardrails blocking profanity, vulgar language, and any adult content.',
+      image: project2Image,
+      link: 'https://kidosai.seeleco.co/'
     }
   ];
 
