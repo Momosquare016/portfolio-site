@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import project1Image from '../assets/images/Yornews.png';
 import project2Image from '../assets/images/Kidos AI.png';
 import project3Image from '../assets/images/Dashubs.png';
+import project4Image from '../assets/images/Matteca.png';
 import CosmosBackground from '../components/CosmosBackground';
 import Timeline from '../components/Timeline';
 import ContactPopup from '../components/ContactPopup';
@@ -67,7 +68,7 @@ function ProjectsSection({ projects }) {
         >
           Projects
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto max-w-5xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto max-w-6xl">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
@@ -84,7 +85,7 @@ export default function Home() {
       title: 'Yornews',
       description: 'Fullstack website that provides personalized news with the help of AI.',
       image: project1Image,
-      link: 'https://yornews.seeleco.co/'
+      link: 'https://yornews.com/'
     },
     {
       id: 2,
@@ -99,6 +100,13 @@ export default function Home() {
       description: 'Wix website designed for a startup marketplace.',
       image: project3Image,
       link: 'https://www.dashubs.com/'
+    },
+    {
+      id: 4,
+      title: 'Matteca',
+      description: 'Matteca helps track, review and fix your life. Track sleep, gym, diet, macros, work, finance, anything. Type it, speak it, or let the AI parse it.',
+      image: project4Image,
+      link: 'https://matteca.com/'
     }
   ];
 

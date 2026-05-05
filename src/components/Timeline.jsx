@@ -32,7 +32,14 @@ const milestones = [
   },
   {
     year: '2026',
-    title: 'Open to New Remote Opportunities',
+    title: 'Blu Frame',
+    description: 'Digital services company — web, backend, cloud, and AI.',
+    icon: '🏢',
+    color: 'from-blue-600 to-indigo-500',
+  },
+  {
+    year: '2026',
+    title: 'Open to Remote Jobs',
     description: 'Waiting for your call.',
     icon: '📞',
     color: 'from-pink-500 to-rose-500',
@@ -113,7 +120,7 @@ export default function Timeline() {
           {/* Timeline items */}
           <div className="space-y-12">
             {milestones.map((milestone, index) => (
-              <TimelineItem key={milestone.year} milestone={milestone} index={index} />
+              <TimelineItem key={index} milestone={milestone} index={index} />
             ))}
           </div>
         </div>
