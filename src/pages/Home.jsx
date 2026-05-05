@@ -1,10 +1,13 @@
-import { useRef } from 'react';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { useRef, lazy, Suspense } from 'react';
 import { motion, useInView } from 'framer-motion';
-import project1Image from '../assets/images/Yornews.png';
-import project2Image from '../assets/images/Kidos AI.png';
-import project3Image from '../assets/images/Dashubs.png';
-import project4Image from '../assets/images/Matteca.png';
+import project1Image from '../assets/images/Yornews.webp';
+import project2Image from '../assets/images/KidosAI.webp';
+import project3Image from '../assets/images/Dashubs.webp';
+import project4Image from '../assets/images/Matteca.webp';
+
+const DotLottieReact = lazy(() =>
+  import('@lottiefiles/dotlottie-react').then(m => ({ default: m.DotLottieReact }))
+);
 import CosmosBackground from '../components/CosmosBackground';
 import Timeline from '../components/Timeline';
 import ContactPopup from '../components/ContactPopup';
@@ -34,6 +37,8 @@ function ProjectCard({ project, index }) {
           src={project.image}
           alt={project.title}
           className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.3 }}
         />
@@ -129,12 +134,14 @@ export default function Home() {
 
             {/* Lottie Animation - Centered and Large */}
             <div className="w-full max-w-xs sm:max-w-3xl md:max-w-4xl lg:max-w-5xl -mb-4 sm:-mb-8 md:-mb-12 lg:-mb-16">
-              <DotLottieReact
-                src="/animations/developer-animation.lottie"
-                loop
-                autoplay
-                className="w-full h-auto"
-              />
+              <Suspense fallback={<div className="w-full aspect-video" />}>
+                <DotLottieReact
+                  src="/animations/developer-animation.lottie"
+                  loop
+                  autoplay
+                  className="w-full h-auto"
+                />
+              </Suspense>
             </div>
 
             {/* Terminal-style Text Below Animation - wraps on mobile instead of clipping */}
