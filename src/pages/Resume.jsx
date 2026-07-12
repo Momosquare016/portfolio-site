@@ -9,7 +9,9 @@ export default function Resume() {
         {/* Download Button */}
         <div className="flex justify-center mb-12">
           <a
-            href="/Muhammad_Ali_Resume.pdf"
+            /* ?v=2 is a cache-busting query: browsers/CDNs cache files by URL,
+               so bumping this number forces everyone to fetch the newest PDF. */
+            href="/Muhammad_Ali_Resume.pdf?v=2"
             download="Muhammad_Ali_Resume.pdf"
             className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all shadow-lg hover:shadow-blue-500/50 text-lg"
           >
@@ -20,7 +22,9 @@ export default function Resume() {
         {/* Resume Image */}
         <div className="bg-gray-900/50 border border-blue-900/50 rounded-lg overflow-hidden shadow-2xl p-4 md:p-8">
           <img
-            src="/resume-preview.png"
+            /* ?v=2 forces a fresh download of the preview image so the old
+               cached resume screenshot is never shown after an update. */
+            src="/resume-preview.png?v=2"
             alt="Muhammad Ali Resume"
             className="w-full h-auto rounded shadow-lg"
           />
