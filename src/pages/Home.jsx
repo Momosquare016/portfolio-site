@@ -206,7 +206,8 @@ export default function Home() {
                   cool tech and talking to people.
                 </>,
                 <>
-                  Here's why you should hire me: I understand the tech you're selling like no other sales
+                  <span className="text-blue-400 font-semibold">Here's why you should hire me:</span>{' '}
+                  I understand the tech you're selling like no other sales
                   person, and I explain it to clients in plain English, with the right jargon for whoever
                   is in the room.
                 </>,
@@ -244,7 +245,7 @@ export default function Home() {
                     className={`
                       max-w-[92%] md:max-w-[80%] w-fit
                       rounded-3xl px-5 py-4 sm:px-6 sm:py-5 shadow-lg text-left
-                      bg-blue-600/20 border border-blue-500/30
+                      bg-gray-800/70 border border-white/5
                       ${
                         // Every bubble is the same colour because they are all Mo
                         // talking. Only the side and the tail corner alternate.
