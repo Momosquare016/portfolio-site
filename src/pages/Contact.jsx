@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import CopyableContact from '../components/CopyableContact';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -195,15 +196,14 @@ export default function Contact() {
           <div className="mt-10 pt-8 border-t border-blue-900/30">
             <p className="text-center text-gray-400 mb-6">Or reach out directly:</p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+              <CopyableContact
+                icon="✉️"
+                label="monotify016@gmail.com"
+                value="monotify016@gmail.com"
+                textSize="text-base"
+              />
               <a
-                href="mailto:monotify016@gmail.com"
-                className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors"
-              >
-                <span>✉️</span>
-                <span>monotify016@gmail.com</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/muhammad-ali-r-35a9762b4"
+                href="https://www.linkedin.com/in/muhammad-ali-35a9762b4/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors"
@@ -211,13 +211,12 @@ export default function Contact() {
                 <span>💼</span>
                 <span>LinkedIn</span>
               </a>
-              <a
-                href="tel:+601161455862"
-                className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors"
-              >
-                <span>📱</span>
-                <span>+60 1161455862</span>
-              </a>
+              <CopyableContact
+                icon="📱"
+                label="+60 1161455862"
+                value="+601161455862"
+                textSize="text-base"
+              />
             </div>
           </div>
         </motion.div>

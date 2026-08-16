@@ -14,6 +14,7 @@ const DotLottieReact = lazy(() =>
 import CosmosBackground from '../components/CosmosBackground';
 import Timeline from '../components/Timeline';
 import ContactPopup from '../components/ContactPopup';
+import CopyableContact from '../components/CopyableContact';
 
 function ProjectCard({ project, index }) {
   const ref = useRef(null);
@@ -25,7 +26,11 @@ function ProjectCard({ project, index }) {
       href={project.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group bg-gray-900 border border-blue-900/50 hover:border-blue-500 transition-all duration-300 overflow-hidden rounded-lg hover:shadow-xl hover:shadow-blue-500/20"
+      /* h-full + flex-col makes every card fill the full height of its grid row,
+         so cards with short descriptions stretch to match the tallest one.
+         Combined with mt-auto on the "View Project" line below, that pins the
+         link to the bottom of every card so they all line up. */
+      className="group flex h-full flex-col bg-gray-900 border border-blue-900/50 hover:border-blue-500 transition-all duration-300 overflow-hidden rounded-lg hover:shadow-xl hover:shadow-blue-500/20"
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{
@@ -46,15 +51,19 @@ function ProjectCard({ project, index }) {
           transition={{ duration: 0.3 }}
         />
       </div>
-      <div className="p-4 sm:p-6 space-y-3">
+      {/* flex-1 lets this text block absorb the card's leftover height. */}
+      <div className="flex flex-1 flex-col p-4 sm:p-6 space-y-3">
         <h3 className="font-heading text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
           {project.title}
         </h3>
         <p className="text-gray-400 text-sm leading-relaxed">
           {project.description}
         </p>
-        <div className="pt-2 text-blue-500 text-sm font-medium group-hover:translate-x-2 transition-transform inline-block">
-          View Project →
+        {/* mt-auto pushes this to the bottom of the card, whatever the text length. */}
+        <div className="mt-auto pt-4 text-blue-500 text-sm font-medium">
+          <span className="inline-block group-hover:translate-x-2 transition-transform">
+            View Project →
+          </span>
         </div>
       </div>
     </motion.a>
@@ -182,32 +191,63 @@ export default function Home() {
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-8 text-center">
               About Me
             </h2>
-            <div className="space-y-10 text-gray-300 leading-relaxed text-lg">
-              <p>
-                Hi! I'm <span className="text-blue-400 font-semibold">Muhammad Ali</span>. Call me Mo,
-                because I can't box. Yet. I build software from scratch, and sell it myself if it's B2B,
-                because I love creating cool tech and talking to people.
-              </p>
-              <p>
-                Here's why you should hire me: I understand the tech you're selling like no other sales
-                person, and I explain it to clients in plain English, with the right jargon for whoever
-                is in the room. All without running to my superiors every five minutes.
-              </p>
-              <p>
-                I build proof of concepts, interactive demos, and ROI models backed by your own case
-                studies. My approach to sales is high volume and consistent energy, with the empathy to
-                actually understand a client's problem.
-              </p>
-              <p>
-                Check out my{' '}
-                <Link
-                  to="/resume"
-                  className="text-blue-400 font-semibold underline underline-offset-4 decoration-blue-400/40 hover:text-blue-300 hover:decoration-blue-300 transition-colors"
-                >
-                  resume
-                </Link>{' '}
-                to review my experience and judge whether it backs up the claims above.
-              </p>
+            {/* Each entry in this array is one paragraph of the About Me copy.
+                Keeping them in an array (instead of writing six <p> tags by hand)
+                lets the code below alternate their alignment automatically using
+                the index, so adding or removing a paragraph keeps the zig-zag intact. */}
+            <div className="space-y-6 md:space-y-8 text-gray-300 leading-relaxed text-lg">
+              {[
+                <>
+                  Hi! I'm <span className="text-blue-400 font-semibold">Muhammad Ali</span>. Call me Mo,
+                  because I can't box. Yet.
+                </>,
+                <>
+                  I build software from scratch, and sell it myself if it's B2B, because I love creating
+                  cool tech and talking to people.
+                </>,
+                <>
+                  Here's why you should hire me: I understand the tech you're selling like no other sales
+                  person, and I explain it to clients in plain English, with the right jargon for whoever
+                  is in the room.
+                </>,
+                <>
+                  All without running to my superiors every five minutes.
+                </>,
+                <>
+                  I build proof of concepts, interactive demos, and ROI models backed by your own case
+                  studies.
+                </>,
+                <>
+                  My approach to sales is high volume and consistent energy, with the empathy to actually
+                  understand a client's problem.
+                </>,
+                <>
+                  Check out my{' '}
+                  <Link
+                    to="/resume"
+                    className="text-blue-400 font-semibold underline underline-offset-4 decoration-blue-400/40 hover:text-blue-300 hover:decoration-blue-300 transition-colors"
+                  >
+                    resume
+                  </Link>{' '}
+                  to review my experience. Don't take my word for it.
+                </>,
+              ].map((paragraph, index) => {
+                // Even paragraphs (0, 2, 4...) hug the left edge, odd ones hug the right.
+                const isLeft = index % 2 === 0;
+                return (
+                  <p
+                    key={index}
+                    className={`md:max-w-[80%] ${
+                      // mr-auto pushes the block left, ml-auto pushes it right.
+                      // Both only kick in from md up, so on narrow phones every
+                      // paragraph stays full width and left-aligned, which reads better.
+                      isLeft ? 'md:mr-auto md:text-left' : 'md:ml-auto md:text-right'
+                    }`}
+                  >
+                    {paragraph}
+                  </p>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -221,16 +261,13 @@ export default function Home() {
               Contact Me
             </h2>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
-              <div className="flex items-center space-x-3 text-gray-300 hover:text-blue-400 transition-colors">
-                <span className="text-2xl">📱</span>
-                <a href="tel:+601161455862" className="text-lg hover:underline">
-                  +60 1161455862
-                </a>
-              </div>
+              {/* Phone and email are copy-to-clipboard rather than links, since
+                  tel:/mailto: often go nowhere on a desktop browser. */}
+              <CopyableContact icon="📱" label="+60 1161455862" value="+601161455862" />
               <div className="flex items-center space-x-3 text-gray-300 hover:text-blue-400 transition-colors">
                 <span className="text-2xl">💼</span>
                 <a
-                  href="https://www.linkedin.com/in/muhammad-ali-r-35a9762b4"
+                  href="https://www.linkedin.com/in/muhammad-ali-35a9762b4/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-lg hover:underline"
@@ -238,12 +275,7 @@ export default function Home() {
                   LinkedIn Profile
                 </a>
               </div>
-              <div className="flex items-center space-x-3 text-gray-300 hover:text-blue-400 transition-colors">
-                <span className="text-2xl">✉️</span>
-                <a href="mailto:monotify016@gmail.com" className="text-lg hover:underline">
-                  monotify016@gmail.com
-                </a>
-              </div>
+              <CopyableContact icon="✉️" label="monotify016@gmail.com" value="monotify016@gmail.com" />
             </div>
           </div>
           <div className="text-center pt-8 border-t border-blue-900/30">
