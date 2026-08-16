@@ -243,15 +243,14 @@ export default function Home() {
                     key={index}
                     className={`
                       max-w-[92%] md:max-w-[80%] w-fit
-                      rounded-3xl px-5 py-4 sm:px-6 sm:py-5 shadow-lg
+                      rounded-3xl px-5 py-4 sm:px-6 sm:py-5 shadow-lg text-left
+                      bg-blue-600/20 border border-blue-500/30
                       ${
+                        // Every bubble is the same colour because they are all Mo
+                        // talking. Only the side and the tail corner alternate.
                         isLeft
-                          ? /* Incoming-message bubble: grey, squared-off top-left
-                               corner acting as the tail, pushed to the left. */
-                            'mr-auto text-left bg-gray-800/70 border border-white/5 rounded-tl-md'
-                          : /* Outgoing-message bubble: blue tinted, tail on the
-                               top-right, pushed to the right. */
-                            'ml-auto text-left bg-blue-600/20 border border-blue-500/30 rounded-tr-md'
+                          ? 'mr-auto rounded-tl-md'
+                          : 'ml-auto rounded-tr-md'
                       }
                     `}
                   >
