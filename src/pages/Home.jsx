@@ -198,8 +198,8 @@ export default function Home() {
             <div className="space-y-6 md:space-y-8 text-gray-300 leading-relaxed text-lg">
               {[
                 <>
-                  Hi! I'm <span className="text-blue-400 font-semibold">Muhammad Ali</span>. Call me Mo,
-                  because I can't box. Yet.
+                  Hi! I'm Muhammad Ali. Call me{' '}
+                  <span className="text-blue-400 font-semibold">Mo</span>, because I can't box. Yet.
                 </>,
                 <>
                   I build software from scratch, and sell it myself if it's B2B, because I love creating
@@ -214,8 +214,11 @@ export default function Home() {
                   All without running to my superiors every five minutes.
                 </>,
                 <>
-                  I build proof of concepts, interactive demos, and ROI models backed by your own case
-                  studies.
+                  I can run discovery calls and technical demos, while also building{' '}
+                  <span className="text-blue-400 font-semibold">
+                    proof of concepts, interactive demos, and ROI models
+                  </span>{' '}
+                  backed by your own case studies.
                 </>,
                 <>
                   My approach to sales is high volume and consistent energy, with the empathy to actually
@@ -232,17 +235,25 @@ export default function Home() {
                   to review my experience. Don't take my word for it.
                 </>,
               ].map((paragraph, index) => {
-                // Even paragraphs (0, 2, 4...) hug the left edge, odd ones hug the right.
+                // Even paragraphs (0, 2, 4...) hug the left edge, odd ones hug the right,
+                // so the section reads like a text message thread.
                 const isLeft = index % 2 === 0;
                 return (
                   <p
                     key={index}
-                    className={`md:max-w-[80%] ${
-                      // mr-auto pushes the block left, ml-auto pushes it right.
-                      // Both only kick in from md up, so on narrow phones every
-                      // paragraph stays full width and left-aligned, which reads better.
-                      isLeft ? 'md:mr-auto md:text-left' : 'md:ml-auto md:text-right'
-                    }`}
+                    className={`
+                      max-w-[92%] md:max-w-[80%] w-fit
+                      rounded-3xl px-5 py-4 sm:px-6 sm:py-5 shadow-lg
+                      ${
+                        isLeft
+                          ? /* Incoming-message bubble: grey, squared-off top-left
+                               corner acting as the tail, pushed to the left. */
+                            'mr-auto text-left bg-gray-800/70 border border-white/5 rounded-tl-md'
+                          : /* Outgoing-message bubble: blue tinted, tail on the
+                               top-right, pushed to the right. */
+                            'ml-auto text-left bg-blue-600/20 border border-blue-500/30 rounded-tr-md'
+                      }
+                    `}
                   >
                     {paragraph}
                   </p>

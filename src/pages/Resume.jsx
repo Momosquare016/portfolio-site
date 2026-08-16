@@ -19,8 +19,11 @@ export default function Resume() {
           </a>
         </div>
 
-        {/* Resume Image */}
-        <div className="bg-gray-900/50 border border-blue-900/50 rounded-lg overflow-hidden shadow-2xl p-4 md:p-8">
+        {/* Resume Image.
+            max-w-2xl keeps the page at a comfortable reading size instead of
+            blowing the A4 scan up to the full width of the screen, and
+            mx-auto re-centres the narrower card. */}
+        <div className="max-w-2xl mx-auto bg-gray-900/50 border border-blue-900/50 rounded-lg overflow-hidden shadow-2xl p-3 md:p-5">
           <img
             /* ?v=3 forces a fresh download of the preview image so the old
                cached resume screenshot is never shown after an update. */
