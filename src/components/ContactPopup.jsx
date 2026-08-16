@@ -80,7 +80,7 @@ export default function ContactPopup() {
                 </h3>
 
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  Feel free to get in touch to connect, collaborate, or — if you're feeling generous — <span className="text-blue-400 font-semibold">offer me a job.</span>
+                  Feel free to get in touch to connect, collaborate, or, if you're feeling generous, <span className="text-blue-400 font-semibold">offer me a job.</span>
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">

@@ -33,7 +33,7 @@ const milestones = [
   {
     year: '2026',
     title: 'Blu Frame',
-    description: 'Digital services company — web, backend, cloud, and AI.',
+    description: 'Digital services company: web, backend, cloud, and AI.',
     icon: '🏢',
     color: 'from-blue-600 to-indigo-500',
   },

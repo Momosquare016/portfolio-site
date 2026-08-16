@@ -11,7 +11,7 @@ export default function Resume() {
           <a
             /* ?v=3 is a cache-busting query: browsers/CDNs cache files by URL,
                so bumping this number forces everyone to fetch the newest PDF. */
-            href="/Muhammad_Ali_Resume.pdf?v=3"
+            href="/Muhammad_Ali_Resume.pdf?v=4"
             download="Muhammad_Ali_Resume.pdf"
             className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all shadow-lg hover:shadow-blue-500/50 text-lg"
           >
@@ -24,7 +24,7 @@ export default function Resume() {
           <img
             /* ?v=3 forces a fresh download of the preview image so the old
                cached resume screenshot is never shown after an update. */
-            src="/resume-preview.png?v=3"
+            src="/resume-preview.png?v=4"
             alt="Muhammad Ali Resume"
             className="w-full h-auto rounded shadow-lg"
           />

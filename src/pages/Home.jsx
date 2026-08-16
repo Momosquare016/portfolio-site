@@ -128,8 +128,20 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center">
 
             {/* Title Above Animation - smaller on mobile */}
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white tracking-tight text-center -mb-4 sm:-mb-8 md:-mb-12 lg:-mb-16">
-              Full-Stack Developer
+            <h1 className="font-heading font-black text-white tracking-tight text-center -mb-4 sm:-mb-8 md:-mb-12 lg:-mb-16 flex flex-col items-center leading-[1.05]">
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl">
+                Sales Engineer
+              </span>
+              <span className="flex items-center gap-3 sm:gap-4 w-full my-1 sm:my-2">
+                <span className="h-px flex-1 bg-gradient-to-r from-transparent to-blue-400/50" />
+                <span className="text-blue-400 font-mono font-normal text-xs sm:text-sm md:text-base tracking-[0.3em] uppercase">
+                  and
+                </span>
+                <span className="h-px flex-1 bg-gradient-to-l from-transparent to-blue-400/50" />
+              </span>
+              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl">
+                Forward Deployed Engineer
+              </span>
             </h1>
 
             {/* Lottie Animation - Centered and Large */}
@@ -172,7 +184,7 @@ export default function Home() {
                 Hi, I'm <span className="text-blue-400 font-semibold">Muhammad Ali (Mo)</span>.
                 I'm passionate about creating technology that not only works but solves real problems for people.
                 While I love building tech, I'm equally fascinated by understanding customer needs and turning
-                those insights into meaningful products—this is the business side of me.
+                those insights into meaningful products. That's the business side of me.
               </p>
               <p>
                 I'm pursuing a degree in Computer Science at Monash to strengthen my coding skills and grasp
