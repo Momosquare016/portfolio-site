@@ -181,21 +181,19 @@ export default function Home() {
             </h2>
             <div className="space-y-10 text-gray-300 leading-relaxed text-lg">
               <p>
-                Hi! I'm <span className="text-blue-400 font-semibold">Muhammad Ali</span>, and you can
-                call me Mo, because I can't box. Yet. What I can do is build software from scratch myself,
-                and then sell it myself too if it's B2B, because I love creating cool tech and
-                talking to people.
+                Hi! I'm <span className="text-blue-400 font-semibold">Muhammad Ali</span>. Call me Mo,
+                because I can't box. Yet. I build software from scratch, and sell it myself if it's B2B,
+                because I love creating cool tech and talking to people.
               </p>
               <p>
-                Here's why you should hire me: I understand the tech you're selling in depth, in a way most
-                sales people don't, and I can explain it to clients in plain English with the right level of
-                technical jargon for whoever is in the room. I can do all of that without having to check
-                with my superiors far too often.
+                Here's why you should hire me: I understand the tech you're selling like no other sales
+                person, and I explain it to clients in plain English, with the right jargon for whoever
+                is in the room. All without running to my superiors every five minutes.
               </p>
               <p>
-                I can build proof of concepts, interactive demos, and even ROI models, backed by the right
-                boilerplate and your company's own case studies. My approach to sales is high volume and
-                consistent energy, paired with the empathy to actually understand a client's problem.
+                I build proof of concepts, interactive demos, and ROI models backed by your own case
+                studies. My approach to sales is high volume and consistent energy, with the empathy to
+                actually understand a client's problem.
               </p>
             </div>
           </div>
