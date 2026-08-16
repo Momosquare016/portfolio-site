@@ -183,7 +183,8 @@ export default function Home() {
               <p>
                 Hi, I'm <span className="text-blue-400 font-semibold">Muhammad Ali</span>, and you can
                 call me Mo, because I can't box. Yet. What I can do is build software from scratch myself,
-                and then sell it myself too if it's B2B.
+                and then sell it myself too if it's B2B, because I love creating cool tech and
+                talking to people.
               </p>
               <p>
                 Here's why you should hire me: I understand the tech you're selling in depth, in a way most
