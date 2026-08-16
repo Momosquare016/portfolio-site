@@ -181,7 +181,7 @@ export default function Home() {
             </h2>
             <div className="space-y-10 text-gray-300 leading-relaxed text-lg">
               <p>
-                Hi, I'm <span className="text-blue-400 font-semibold">Muhammad Ali</span>, and you can
+                Hi! I'm <span className="text-blue-400 font-semibold">Muhammad Ali</span>, and you can
                 call me Mo, because I can't box. Yet. What I can do is build software from scratch myself,
                 and then sell it myself too if it's B2B, because I love creating cool tech and
                 talking to people.
