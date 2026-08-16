@@ -1,5 +1,8 @@
 import { useRef, lazy, Suspense } from 'react';
 import { motion, useInView } from 'framer-motion';
+// Link does client-side navigation between routes (no full page reload),
+// which is why it's used here instead of a plain <a href="/resume">.
+import { Link } from 'react-router-dom';
 import project1Image from '../assets/images/Yornews.webp';
 import project2Image from '../assets/images/KidosAI.webp';
 import project3Image from '../assets/images/Dashubs.webp';
@@ -194,6 +197,16 @@ export default function Home() {
                 I build proof of concepts, interactive demos, and ROI models backed by your own case
                 studies. My approach to sales is high volume and consistent energy, with the empathy to
                 actually understand a client's problem.
+              </p>
+              <p>
+                Check out my{' '}
+                <Link
+                  to="/resume"
+                  className="text-blue-400 font-semibold underline underline-offset-4 decoration-blue-400/40 hover:text-blue-300 hover:decoration-blue-300 transition-colors"
+                >
+                  resume
+                </Link>{' '}
+                to find out my experience and see if I'm all talk or not.
               </p>
             </div>
           </div>
