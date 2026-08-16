@@ -206,7 +206,7 @@ export default function Home() {
                 >
                   resume
                 </Link>{' '}
-                to find out my experience and see if I'm all talk or not.
+                to review my experience and judge whether it backs up the claims above.
               </p>
             </div>
           </div>
