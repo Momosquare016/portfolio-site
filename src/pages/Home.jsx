@@ -181,16 +181,20 @@ export default function Home() {
             </h2>
             <div className="space-y-10 text-gray-300 leading-relaxed text-lg">
               <p>
-                Hi, I'm <span className="text-blue-400 font-semibold">Muhammad Ali (Mo)</span>.
-                I'm passionate about creating technology that not only works but solves real problems for people.
-                While I love building tech, I'm equally fascinated by understanding customer needs and turning
-                those insights into meaningful products. That's the business side of me.
+                Hi, I'm <span className="text-blue-400 font-semibold">Muhammad Ali</span>, and you can
+                call me Mo, because I can't box. Yet. What I can do is build software from scratch myself,
+                and then sell it myself too if it's B2B.
               </p>
               <p>
-                I'm pursuing a degree in Computer Science at Monash to strengthen my coding skills and grasp
-                key tech concepts. At the same time, I study Business to better understand how to bring tech
-                products to market and explore opportunities in the fintech space. My goal is to bridge the
-                gap between tech creation and real-world impact.
+                Here's why you should hire me: I understand the tech you're selling in depth, in a way most
+                sales people don't, and I can explain it to clients in plain English with the right level of
+                technical jargon for whoever is in the room. I can do all of that without having to check
+                with my superiors far too often.
+              </p>
+              <p>
+                I can build proof of concepts, interactive demos, and even ROI models, backed by the right
+                boilerplate and your company's own case studies. My approach to sales is high volume and
+                consistent energy, paired with the empathy to actually understand a client's problem.
               </p>
             </div>
           </div>
