@@ -171,7 +171,7 @@ export default function Home() {
             {/* Terminal-style Text Below Animation - wraps on mobile instead of clipping */}
             <div className="text-center w-full px-2 sm:px-4">
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-400 font-mono leading-relaxed inline-block border-r-4 border-blue-400 pr-2 sm:animate-typing sm:overflow-hidden sm:whitespace-nowrap max-w-full">
-                Techpreneur: I can do both, build and sell at high calibre
+                Techpreneur: I can do both, build and sell at high calibre.
               </p>
             </div>
           </div>
